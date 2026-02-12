@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHK School System</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1565c0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #bbdefb 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            width: 85%;
+            max-width: 380px;
+        }
+        .logo { width: 120px; height: auto; margin-bottom: 15px; border-radius: 15px; }
+        h2 { color: #1565c0; font-size: 1.4rem; margin-bottom: 25px; line-height: 1.4; }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #4caf50;
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+        }
+        .btn:active { transform: scale(0.95); opacity: 0.9; }
+        .btn-student { 
+            background: #2196f3; 
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+        }
+        .btn img { width: 32px; height: 32px; margin-right: 12px; }
+
+        .footer { font-size: 0.75rem; color: #555; margin-top: 25px; line-height: 1.5; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="icon-192.png" alt="CHK School Logo" class="logo">
+        <h2>ระบบตรวจสอบผลการเรียน<br>และพิมพ์ใบคำร้องออนไลน์</h2>
+        
+        <a href="https://script.google.com/a/macros/chk.ac.th/s/AKfycbyTQEO2qjOpX2cKNXsdwBzQyBURG3oz-t4w4gmF0cku-AT7r3qqasryg3HB4oNmO1uplg/exec" class="btn">
+            <img src="https://img.icons8.com/color/96/teacher.png" alt="Teacher">
+            สำหรับครู
+        </a>
+
+        <a href="https://script.google.com/macros/s/AKfycbx1b0t_c8HXs5HDuN1WeyCN19DJJyGmOm915LPOWFN2nOeD08CoB3-7G4K-YwLEULDWTA/exec" class="btn btn-student">
+            <img src="https://img.icons8.com/color/96/student-male.png" alt="Student">
+            สำหรับนักเรียน
+        </a>
+
+        <div class="footer">
+            โรงเรียนโชคชัยสามัคคี สพม.นครราชสีมา<br>
+            @ By wow-0854793190
+        </div>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(reg => {
+                    console.log('Service Worker Registered!');
+                }).catch(err => {
+                    console.log('Service Worker Failed!', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
